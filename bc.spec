@@ -91,5 +91,5 @@ gzip -9nf AUTHORS ChangeLog FAQ NEWS README
 
 %{_infodir}/dc.info*
 
-%clean 
+%clean
 rm -rf $RPM_BUILD_ROOT
