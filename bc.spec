@@ -61,7 +61,7 @@ gzip -9nf $RPM_BUILD_ROOT/usr/{info/dc.info,man/man1/*}
 /sbin/install-info /usr/info/dc.info.gz /etc/info-dir
 
 %preun
-if [ $1 = 0 ]; then
+if [ "$1" = "0" ]; then
 	/sbin/install-info --delete /usr/info/dc.info.gz /etc/info-dir
 fi
 
