@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Bc
+Comment=Intepreter of bc --- infinite precision calculation language
+Comment[pl]=Interpreter bc --- języka obliczeń o nieskończonej precyzji
+Icon=
+Exec=bc
+Terminal=1
+Type=Application
+# vi: encoding=utf-8
