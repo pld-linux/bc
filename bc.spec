@@ -4,16 +4,14 @@ Summary(fr):	GNU bc
 Summary(pl):	GNU bc (jêzyk obliczeñ numerycznych) i dc (kalkulator)
 Summary(tr):	GNU hesap makinasý
 Name:		bc
-Version:	1.05a
-Release:	16
+Version:	1.06
+Release:	1
 License:	GPL
 Group:		Applications/Math
 Group(de):	Applikationen/Mathematik
 Group(pl):	Aplikacje/Matematyczne
 Source0:	ftp://ftp.gnu.org/pub/gnu/bc/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
-Patch1:		%{name}-DESTDIR.patch
-Patch2:		%{name}-longline.patch
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	readline-devel >= 4.1
 BuildRequires:	flex
@@ -51,10 +49,8 @@ bc metin ekranda çalýþan bir hesap makinasýdýr. Taban dönüþümü gibi
 ileri yetenekleri vardýr.
 
 %prep
-%setup  -q -n %{name}-1.05
+%setup -q
 %patch0 -p1
-%patch1 -p1
-%patch2 -p1
 
 %build
 aclocal
@@ -64,9 +60,10 @@ aclocal
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
+
+gzip -9nf AUTHORS ChangeLog FAQ NEWS README
 
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
@@ -76,6 +73,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
 %files
 %defattr(644,root,root,755)
+%doc *.gz
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %{_infodir}/dc.info*
