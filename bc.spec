@@ -13,7 +13,7 @@ Source:      	ftp://prep.ai.mit.edu/pug/gnu/%{name}-%{version}.tar.gz
 Patch0:      	bc-info.patch
 Prereq:      	/sbin/install-info 
 Prereq:		grep
-Buildroot:   	/tmp/%{name}-%{version}-root
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
 bc is a text mode calculator of sorts.  It has many extended
