@@ -12,6 +12,7 @@ Group(de):	Applikationen/Mathematik
 Group(pl):	Aplikacje/Matematyczne
 Source0:	ftp://ftp.gnu.org/pub/gnu/bc/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
+Patch1:		%{name}-readline.patch
 BuildRequires:	ncurses-devel >= 5.2
 BuildRequires:	readline-devel >= 4.2
 BuildRequires:	flex
@@ -51,6 +52,7 @@ ileri yetenekleri vardýr.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 aclocal
