@@ -22,10 +22,10 @@ Patch0:		%{name}-info.patch
 Patch1:		%{name}-readline.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	bison
+BuildRequires:	flex
 BuildRequires:	ncurses-devel >= 5.2
 BuildRequires:	readline-devel >= 4.2
-BuildRequires:	flex
-BuildRequires:	bison
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -97,10 +97,11 @@ ileri yetenekleri vardýr.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Scientific/Numerics
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
 install %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Scientific/Numerics/bc.desktop
 install %{SOURCE3} $RPM_BUILD_ROOT%{_applnkdir}/Scientific/Numerics/dc.desktop
 
