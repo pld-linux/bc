@@ -78,10 +78,3 @@ fi
 
 %clean 
 rm -rf $RPM_BUILD_ROOT
-
-%changelog
-* Sat May 29 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [1.05a-7]
-- based on RH spec,
-- spec rewrited by PLD team,
-- pl translation Wojtek ¦lusarczyk <wojtek@shadow.eu.org>.
