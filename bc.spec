@@ -100,15 +100,16 @@ ileri yetenekleri vardýr.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Scientific/Numerics
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Scientific/Numerics/bc.desktop
-install %{SOURCE3} $RPM_BUILD_ROOT%{_applnkdir}/Scientific/Numerics/dc.desktop
-
 bzip2 -dc %{SOURCE1} | tar -xf - -C $RPM_BUILD_ROOT%{_mandir}
+
+install -d $RPM_BUILD_ROOT%{_desktopdir}
+
+install %{SOURCE2} %{SOURCE3} \
+	$RPM_BUILD_ROOT%{_desktopdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -123,8 +124,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog FAQ NEWS README
 %attr(755,root,root) %{_bindir}/*
+%{_desktopdir}/*
 %{_mandir}/man1/*
-%{_applnkdir}/Scientific/Numerics/*
 %lang(es) %{_mandir}/es/man1/*
 %lang(fi) %{_mandir}/fi/man1/*
 %lang(hu) %{_mandir}/hu/man1/*
