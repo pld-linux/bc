@@ -12,7 +12,6 @@ Group(pl):	Aplikacje/Matematyczne
 Source:      	ftp://prep.ai.mit.edu/pug/gnu/%{name}-%{version}.tar.gz
 Patch0:      	bc-info.patch
 Prereq:      	/sbin/install-info 
-Prereq:		grep
 Buildroot:   	/tmp/%{name}-%{version}-root
 
 %description
@@ -41,20 +40,25 @@ yetenekleri vardýr.
 
 %prep
 %setup  -q -n %{name}-1.05
-%patch0 -p1
+%patch -p1
 
 %build
-autoconf
+aclocal && autoconf
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
-./configure %{_target} \
-	--prefix=%{_prefix}
+    ./configure \
+	--prefix=%{_prefix} \
+	%{_target_platform}
+
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
-make prefix=$RPM_BUILD_ROOT%{_prefix} install
+make \
+    prefix=$RPM_BUILD_ROOT%{_prefix} \
+    install
 
 gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/dc.info,%{_mandir}/man1/*}
 
@@ -68,7 +72,9 @@ fi
 
 %files
 %defattr(644,root,root,755)
+
 %attr(755,root,root) %{_bindir}/*
+
 %{_mandir}/man1/*
 %{_infodir}/dc.info.gz
 
