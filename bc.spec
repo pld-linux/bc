@@ -5,7 +5,7 @@ Summary(pl): 	Kalkulator bc GNU
 Summary(tr): 	GNU hesap makinasý
 Name:        	bc
 Version:     	1.05a
-Release:     	6
+Release:     	7
 Copyright:   	GPL
 Group:       	Applications/Math
 Group(pl):	Aplikacje/Matematyczne
@@ -13,7 +13,7 @@ Source:      	ftp://prep.ai.mit.edu/pug/gnu/%{name}-%{version}.tar.gz
 Patch0:      	bc-info.patch
 Prereq:      	/sbin/install-info 
 Prereq:		grep
-BuildRoot:	/tmp/%{name}-%{version}-root
+Buildroot:   	/tmp/%{name}-%{version}-root
 
 %description
 bc is a text mode calculator of sorts.  It has many extended
@@ -44,18 +44,19 @@ yetenekleri vardýr.
 %patch0 -p1
 
 %build
+autoconf
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 ./configure %{_target} \
-	--prefix=/usr
+	--prefix=%{_prefix}
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/usr/{bin,man/man1}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
-make prefix=$RPM_BUILD_ROOT/usr install
+make prefix=$RPM_BUILD_ROOT%{_prefix} install
 
-gzip -9nf $RPM_BUILD_ROOT/usr/{info/dc.info,man/man1/*}
+gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/dc.info,%{_mandir}/man1/*}
 
 %post
 /sbin/install-info %{_infodir}/dc.info.gz /etc/info-dir
@@ -75,49 +76,8 @@ fi
 rm -rf $RPM_BUILD_ROOT
 
 %changelog
-* Thu Apr 22 1999 Piotr Czerwiñski <pius@pld.org.pl>
-  [1.05a-6]
-- added Group(pl),
-- recompiled on rpm 3.
-
-* Tue Dec 29 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [1.05a-3]
-- standarized {un}registering info pages (added bc-info.patch),
-- added gzipping man pages.
-
-* Sun Sep 27 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [1.05a-2]
-- changed Buildroot to /tmp/%%{name}-%%{version}-root,
-- added using %%{name} and %%{version} in Source,
-- added "rm -rf $RPM_BUILD_ROOT on top %install,
-- simplifications in %files nad %install,
-- added full %attr description in %files.
-
-* Wed Jun 17 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
-- added pl translation,
-- added %defattr support,
-- build from non root's account.
-
-* Sun Jun 07 1998 Prospector System <bugs@redhat.com>
-- translations modified for de
-
-* Thu Jun 04 1998 Jeff Johnson <jbj@redhat.com>
-- updated to 1.05 with build root.
-
-* Fri Apr 24 1998 Prospector System <bugs@redhat.com>
-- translations modified for de, fr, tr
-
-* Tue Apr 21 1998 Erik Troan <ewt@redhat.com>
-- got upgrades of info entry working (I hope)
-
-* Sun Apr 05 1998 Erik Troan <ewt@redhat.com>
-- fixed incorrect info entry
-
-* Wed Oct 15 1997 Donnie Barnes <djb@redhat.com>
-- added install-info support
-
-* Thu Sep 11 1997 Donald Barnes <djb@redhat.com>
-- upgraded from 1.03 to 1.04
-
-* Mon Jun 02 1997 Erik Troan <ewt@redhat.com>
-- built against glibc
+* Sat May 29 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.05a-7]
+- based on RH spec,
+- spec rewrited by PLD team,
+- pl translation Wojtek ¦lusarczyk <wojtek@shadow.eu.org>.
