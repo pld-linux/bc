@@ -5,9 +5,10 @@ Summary(pl): 	Kalkulator bc GNU
 Summary(tr): 	GNU hesap makinasý
 Name:        	bc
 Version:     	1.05a
-Release:     	5
+Release:     	6
 Copyright:   	GPL
 Group:       	Applications/Math
+Group(pl):	Aplikacje/Matematyczne
 Source:      	ftp://prep.ai.mit.edu/pug/gnu/%{name}-%{version}.tar.gz
 Patch0:      	bc-info.patch
 Prereq:      	/sbin/install-info 
@@ -74,6 +75,11 @@ fi
 rm -rf $RPM_BUILD_ROOT
 
 %changelog
+* Thu Apr 22 1999 Piotr Czerwiñski <pius@pld.org.pl>
+  [1.05a-6]
+- added Group(pl),
+- recompiled on rpm 3.
+
 * Tue Dec 29 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.05a-3]
 - standarized {un}registering info pages (added bc-info.patch),
