@@ -13,9 +13,9 @@ Release:	14
 License:	GPL
 Group:		Applications/Math
 Source0:	ftp://ftp.gnu.org/pub/gnu/bc/%{name}-%{version}.tar.gz
-# Source0-md5: d44b5dddebd8a7a7309aea6c36fda117
+# Source0-md5:	d44b5dddebd8a7a7309aea6c36fda117
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
-# Source1-md5: ae2cf58a4382d6a0bfeaab3a6a11bd30
+# Source1-md5:	ae2cf58a4382d6a0bfeaab3a6a11bd30
 Source2:	bc.desktop
 Source3:	dc.desktop
 Patch0:		%{name}-info.patch
