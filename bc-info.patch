@@ -7,7 +7,7 @@ diff -Nru bc-1.05/doc/dc.texi bc-1.05.new/doc/dc.texi
  
 +@dircategory Miscellaneous:
 +@direntry
-+* dc: (dc)				The GNU RPN calculator.
++* dc: (dc).				The GNU RPN calculator.
 +@end direntry
  @ifinfo
  This file documents @sc{dc}, an arbitrary precision calculator.
