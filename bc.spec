@@ -1,11 +1,15 @@
 Summary:	GNU's bc (a numeric processing language) and dc (a calculator)
 Summary(de):	GNUs bc (eine Zahlenverarbeitungssprache) und dc (ein Rechner)
+Summary(es):	GNU bc - calculadora de lМnea de comando
 Summary(fr):	GNU bc
 Summary(pl):	GNU bc (jЙzyk obliczeЯ numerycznych) i dc (kalkulator)
+Summary(pt_BR):	GNU bc - calculadora de linha de comando
+Summary(ru):	GNU bc (язык обработки чисел) и dc (калькулятор)
 Summary(tr):	GNU hesap makinasЩ
+Summary(uk):	GNU bc (мова обробки чисел) та dc (калькулятор)
 Name:		bc
 Version:	1.06
-Release:	8
+Release:	9
 License:	GPL
 Group:		Applications/Math
 Source0:	ftp://ftp.gnu.org/pub/gnu/bc/%{name}-%{version}.tar.gz
@@ -35,6 +39,14 @@ kann. Installieren Sie bc, wenn Sie seine
 ZahlenverarbeitungsfДhigkeiten brauchen, oder wenn Sie einen
 Textmodus-Rechner haben wollen.
 
+%description -l pt_BR
+bc И uma calculadora modo texto. Ela possui vАrias caracterМsticas
+estendidas como translaГЦo de base.
+
+%description -l es
+bc es una calculadora modo texto. Posee varias caracterМsticas
+extendidas como translaciСn de base.
+
 %description -l fr
 bc est est un outil de calcul en mode texte. Il a des fonctionnalitИs
 Иtendues comme la conversion de base. il peut aussi accepter l'entrИe
@@ -46,9 +58,25 @@ obliczeЯ numerycznych w ktСrym mo©na okre╤liФ precyzjЙ obliczeЯ. Dc
 jest natomiast interakcyjnym bazuj╠cym na notacji RPN kalkulatorem w
 ktСrym tak©e mo©na z gСry okre╤liФ precyzjЙ obliczeЯ.
 
+%description -l pt_BR
+bc И uma calculadora modo texto. Ela possui vАrias caracterМsticas
+estendidas como translaГЦo de base.
+
+%description -l ru
+Пакет bc включает bc и dc. Bc - это арифметический язык для обработки
+чисел произвольной точности. Dc - это интерактивный стековый
+калькулятор произвольной точности, который можно использовать как
+калькулятор в текстовом режиме.
+
 %description -l tr
 bc metin ekranda ГalЩЧan bir hesap makinasЩdЩr. Taban dЖnЭЧЭmЭ gibi
 ileri yetenekleri vardЩr.
+
+%description -l uk
+Пакет bc м╕стить bc та dc. Bc - це арифметична мова для обробки чисел
+дов╕льно╖ точност╕. Dc - це ╕нтерактивний стековий калькулятор
+дов╕льно╖ точност╕, який можна використовувати як калькулятор у
+текстовому режим╕.
 
 %prep
 %setup -q
