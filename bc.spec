@@ -5,7 +5,7 @@ Summary(pl):	GNU bc (jêzyk obliczeñ numerycznych) i dc (kalkulator)
 Summary(tr):	GNU hesap makinasý
 Name:		bc
 Version:	1.06
-Release:	6
+Release:	7
 License:	GPL
 Group:		Applications/Math
 Group(de):	Applikationen/Mathematik

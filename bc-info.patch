@@ -1,18 +1,18 @@
-diff -Nru bc-1.05/doc/dc.texi bc-1.05.new/doc/dc.texi
---- bc-1.05/doc/dc.texi	Sun Mar 29 06:40:39 1998
-+++ bc-1.05.new/doc/dc.texi	Wed Dec 30 00:50:50 1998
-@@ -20,6 +20,10 @@
- @syncodeindex pg fn
+diff -Nur bc-1.06.orig/doc/dc.texi bc-1.06/doc/dc.texi
+--- bc-1.06.orig/doc/dc.texi	Thu Aug 31 17:57:43 2000
++++ bc-1.06/doc/dc.texi	Sat Aug  4 14:02:58 2001
+@@ -21,8 +21,9 @@
  @syncodeindex tp fn
  
-+@dircategory Miscellaneous:
-+@direntry
-+* dc: (dc).				The GNU RPN calculator.
-+@end direntry
  @ifinfo
++@dircategory Miscellaneous:
+ @direntry
+-* dc: (dc).                   Arbritrary precision RPN ``Desktop Calculator''.
++* dc: (dc).				Arbritrary precision RPN ``Desktop Calculator''.
+ @end direntry
  This file documents @sc{dc}, an arbitrary precision calculator.
  
-@@ -85,6 +89,14 @@
+@@ -88,6 +89,14 @@
  @page
  
  @node Top, Introduction, (dir), (dir)
