@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Dc
+Comment=RPN calculator based on bc language
+Comment[pl]=Kalkulator w odwrotnej notacji polskiej oparty na języku bc
+Icon=
+Exec=dc
+Terminal=1
+Type=Application
+# vi: encoding=utf-8
