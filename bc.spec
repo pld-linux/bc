@@ -1,6 +1,6 @@
 Summary:	GNU's bc (a numeric processing language) and dc (a calculator)
 Summary(de):	GNUs bc (eine Zahlenverarbeitungssprache) und dc (ein Rechner)
-Summary(es):	GNU bc - calculadora de línea de comando
+Summary(es):	GNU bc (lenguaje para calculos matematicos) y dc (calculadora)
 Summary(fr):	GNU bc
 Summary(pl):	GNU bc (jêzyk obliczeñ numerycznych) i dc (kalkulator)
 Summary(pt_BR):	GNU bc - calculadora de linha de comando
@@ -48,10 +48,6 @@ Textmodus-Rechner haben wollen.
 %description -l pt_BR
 bc é uma calculadora modo texto. Ela possui várias características
 estendidas como translação de base.
-
-%description -l es
-bc es una calculadora modo texto. Posee varias características
-extendidas como translación de base.
 
 %description -l fr
 bc est est un outil de calcul en mode texte. Il a des fonctionnalités
