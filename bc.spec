@@ -9,11 +9,13 @@ Summary(tr):	GNU hesap makinasЩ
 Summary(uk):	GNU bc (мова обробки чисел) та dc (калькулятор)
 Name:		bc
 Version:	1.06
-Release:	9
+Release:	10
 License:	GPL
 Group:		Applications/Math
 Source0:	ftp://ftp.gnu.org/pub/gnu/bc/%{name}-%{version}.tar.gz
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
+Source2:	bc.desktop
+Source3:	dc.desktop
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-readline.patch
 BuildRequires:	autoconf
@@ -95,6 +97,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT%{_applnkdir}/Scientific/Numerics
+install %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Scientific/Numerics/bc.desktop
+install %{SOURCE3} $RPM_BUILD_ROOT%{_applnkdir}/Scientific/Numerics/dc.desktop
+
 bzip2 -dc %{SOURCE1} | tar -xf - -C $RPM_BUILD_ROOT%{_mandir}
 
 %post
@@ -108,6 +114,7 @@ bzip2 -dc %{SOURCE1} | tar -xf - -C $RPM_BUILD_ROOT%{_mandir}
 %doc AUTHORS ChangeLog FAQ NEWS README
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
+%{_applnkdir}/Scientific/Numerics/*
 %lang(es) %{_mandir}/es/man1/*
 %lang(fi) %{_mandir}/fi/man1/*
 %lang(hu) %{_mandir}/hu/man1/*
