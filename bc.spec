@@ -5,7 +5,7 @@ Summary(pl): 	Kalkulator bc GNU
 Summary(tr): 	GNU hesap makinasý
 Name:        	bc
 Version:     	1.05a
-Release:     	3
+Release:     	5
 Copyright:   	GPL
 Group:       	Applications/Math
 Source:      	ftp://prep.ai.mit.edu/pug/gnu/%{name}-%{version}.tar.gz
