@@ -5,12 +5,13 @@ Summary(pl):	GNU bc (jêzyk obliczeñ numerycznych) i dc (kalkulator)
 Summary(tr):	GNU hesap makinasý
 Name:		bc
 Version:	1.06
-Release:	7
+Release:	8
 License:	GPL
 Group:		Applications/Math
 Group(de):	Applikationen/Mathematik
 Group(pl):	Aplikacje/Matematyczne
 Source0:	ftp://ftp.gnu.org/pub/gnu/bc/%{name}-%{version}.tar.gz
+Source1:	%{name}-non-english-man-pages.tar.bz2
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-readline.patch
 BuildRequires:	autoconf
@@ -68,6 +69,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
+bzip2 -dc %{SOURCE1} | tar -xf - -C $RPM_BUILD_ROOT%{_mandir}
+
 gzip -9nf AUTHORS ChangeLog FAQ NEWS README
 
 %post
@@ -81,6 +84,13 @@ gzip -9nf AUTHORS ChangeLog FAQ NEWS README
 %doc *.gz
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
+%lang(es) %{_mandir}/es/man1/*
+%lang(fi) %{_mandir}/fi/man1/*
+%lang(hu) %{_mandir}/hu/man1/*
+%lang(ja) %{_mandir}/ja/man1/*
+%lang(ko) %{_mandir}/ko/man1/*
+%lang(pl) %{_mandir}/pl/man1/*
+
 %{_infodir}/dc.info*
 
 %clean 
