@@ -58,18 +58,18 @@ make prefix=$RPM_BUILD_ROOT/usr install
 gzip -9nf $RPM_BUILD_ROOT/usr/{info/dc.info,man/man1/*}
 
 %post
-/sbin/install-info /usr/info/dc.info.gz /etc/info-dir
+/sbin/install-info %{_infodir}/dc.info.gz /etc/info-dir
 
 %preun
 if [ "$1" = "0" ]; then
-	/sbin/install-info --delete /usr/info/dc.info.gz /etc/info-dir
+	/sbin/install-info --delete %{_infodir}/dc.info.gz /etc/info-dir
 fi
 
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) /usr/bin/*
-/usr/man/man1/*
-/usr/info/dc.info.gz
+%{_mandir}/man1/*
+%{_infodir}/dc.info.gz
 
 %clean 
 rm -rf $RPM_BUILD_ROOT
