@@ -1,0 +1,24 @@
+diff -uNr bc-1.05.orig/bc/scan.c bc-1.05/bc/scan.c
+--- bc-1.05.orig/bc/scan.c	Mon Apr 21 17:57:52 1997
++++ bc-1.05/bc/scan.c	Thu Apr  6 18:39:26 2000
+@@ -228,7 +228,7 @@
+ /* Variables to help interface readline with bc. */
+ static char *rl_line = (char *)NULL;
+ static char *rl_start = (char *)NULL;
+-static char  rl_len = 0;
++static int  rl_len = 0;
+ 
+ /* Definitions for readline access. */
+ extern FILE *rl_instream;
+diff -uNr bc-1.05.orig/bc/scan.l bc-1.05/bc/scan.l
+--- bc-1.05.orig/bc/scan.l	Mon Apr 21 17:57:00 1997
++++ bc-1.05/bc/scan.l	Thu Apr  6 18:39:14 2000
+@@ -60,7 +60,7 @@
+ /* Variables to help interface readline with bc. */
+ static char *rl_line = (char *)NULL;
+ static char *rl_start = (char *)NULL;
+-static char  rl_len = 0;
++static int  rl_len = 0;
+ 
+ /* Definitions for readline access. */
+ extern FILE *rl_instream;
