@@ -84,7 +84,7 @@ ileri yetenekleri vardýr.
 %patch1 -p1
 
 %build
-aclocal
+%{__aclocal}
 %{__autoconf}
 %configure \
 	--with-readline
