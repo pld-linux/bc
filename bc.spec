@@ -5,11 +5,11 @@ Summary(pl):	GNU bc (jêzyk obliczeñ numerycznych) i dc (kalkulator)
 Summary(tr):	GNU hesap makinasý
 Name:		bc
 Version:	1.05a
-Release:	10
+Release:	11
 License:	GPL
 Group:		Applications/Math
 Group(pl):	Aplikacje/Matematyczne
-Source0:	ftp://prep.ai.mit.edu/pug/gnu/bc/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnu.org/pub/gnu/bc/%{name}-%{version}.tar.gz
 Patch0:		bc-info.patch
 Patch1:		bc-DESTDIR.patch
 Prereq:		/usr/sbin/fix-info-dir
