@@ -110,6 +110,9 @@ install %{SOURCE3} $RPM_BUILD_ROOT%{_applnkdir}/Scientific/Numerics/dc.desktop
 
 bzip2 -dc %{SOURCE1} | tar -xf - -C $RPM_BUILD_ROOT%{_mandir}
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
@@ -130,6 +133,3 @@ bzip2 -dc %{SOURCE1} | tar -xf - -C $RPM_BUILD_ROOT%{_mandir}
 %lang(pl) %{_mandir}/pl/man1/*
 
 %{_infodir}/*.info*
-
-%clean
-rm -rf $RPM_BUILD_ROOT
