@@ -19,33 +19,34 @@ BuildRequires:	bison
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The bc package includes bc and dc. Bc is an arbitrary precision numeric
-processing arithmetic language. Dc is an interactive arbitrary precision
-stack based calculator, which can be used as a text mode calculator.
-Install the bc package if you need its number handling capabilities or if
-you would like to use its text mode calculator.
+The bc package includes bc and dc. Bc is an arbitrary precision
+numeric processing arithmetic language. Dc is an interactive arbitrary
+precision stack based calculator, which can be used as a text mode
+calculator. Install the bc package if you need its number handling
+capabilities or if you would like to use its text mode calculator.
 
 %description -l de
-Das bc-Paket enthält bc und dc. Bc ist eine Zahlenverarbeitungssprache mit
-beliebiger Genauigkeit. Dc ist ein interaktiver, Stapelbasierter Rechner
-mit beliebiger Genauigkeit, der im Textmodus benutzt werden kann.
-Installieren Sie bc, wenn Sie seine Zahlenverarbeitungsfähigkeiten
-brauchen, oder wenn Sie einen Textmodus-Rechner haben wollen.
+Das bc-Paket enthält bc und dc. Bc ist eine Zahlenverarbeitungssprache
+mit beliebiger Genauigkeit. Dc ist ein interaktiver, Stapelbasierter
+Rechner mit beliebiger Genauigkeit, der im Textmodus benutzt werden
+kann. Installieren Sie bc, wenn Sie seine
+Zahlenverarbeitungsfähigkeiten brauchen, oder wenn Sie einen
+Textmodus-Rechner haben wollen.
 
 %description -l fr
 bc est est un outil de calcul en mode texte. Il a des fonctionnalités
-étendues comme la conversion de base. il peut aussi accepter l'entrée sur
-stdin et retourner le résultat. dc est la version RPN.
+étendues comme la conversion de base. il peut aussi accepter l'entrée
+sur stdin et retourner le résultat. dc est la version RPN.
 
 %description -l pl
-Pakiet bc zawiera w sobie programy bc i dc. Bc jest oferuje jêzyk obliczeñ
-numerycznych w którym mo¿na okre¶liæ precyzjê obliczeñ. Dc jest natomiast
-interakcyjnym bazuj±cym na notacji RPN kalkulatorem w którym tak¿e mo¿na z
-góry okre¶liæ precyzjê obliczeñ.
+Pakiet bc zawiera w sobie programy bc i dc. Bc jest oferuje jêzyk
+obliczeñ numerycznych w którym mo¿na okre¶liæ precyzjê obliczeñ. Dc
+jest natomiast interakcyjnym bazuj±cym na notacji RPN kalkulatorem w
+którym tak¿e mo¿na z góry okre¶liæ precyzjê obliczeñ.
 
 %description -l tr
-bc metin ekranda çalýþan bir hesap makinasýdýr. Taban dönüþümü gibi ileri
-yetenekleri vardýr.
+bc metin ekranda çalýþan bir hesap makinasýdýr. Taban dönüþümü gibi
+ileri yetenekleri vardýr.
 
 %prep
 %setup  -q -n %{name}-1.05
