@@ -1,37 +1,35 @@
 Summary:	GNU's bc (a numeric processing language) and dc (a calculator)
-Summary(de): 	GNUs bc (eine Zahlenverarbeitungssprache) und dc (ein Rechner)
-Summary(fr): 	GNU bc
-Summary(pl): 	GNU bc (jêzyk obliczeñ numerycznych) i dc (kalkulator)
-Summary(tr): 	GNU hesap makinasý
+Summary(de):	GNUs bc (eine Zahlenverarbeitungssprache) und dc (ein Rechner)
+Summary(fr):	GNU bc
+Summary(pl):	GNU bc (jêzyk obliczeñ numerycznych) i dc (kalkulator)
+Summary(tr):	GNU hesap makinasý
 Name:		bc
 Version:	1.05a
-Release:	9
-Copyright:	GPL
+Release:	10
+License:	GPL
 Group:		Applications/Math
 Group(pl):	Aplikacje/Matematyczne
-Source:		ftp://prep.ai.mit.edu/pug/gnu/bc/%{name}-%{version}.tar.gz
+Source0:	ftp://prep.ai.mit.edu/pug/gnu/bc/%{name}-%{version}.tar.gz
 Patch0:		bc-info.patch
 Patch1:		bc-DESTDIR.patch
 Prereq:		/usr/sbin/fix-info-dir
 BuildRequires:	ncurses-devel >= 5.0
-BuildRequires:	readline-devel
+BuildRequires:	readline-devel >= 4.1
 Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
 The bc package includes bc and dc. Bc is an arbitrary precision numeric
 processing arithmetic language. Dc is an interactive arbitrary precision
 stack based calculator, which can be used as a text mode calculator.
-
 Install the bc package if you need its number handling capabilities or if
 you would like to use its text mode calculator.
 
 %description -l de
 Das bc-Paket enthält bc und dc. Bc ist eine Zahlenverarbeitungssprache mit
-beliebiger Genauigkeit. Dc ist ein interaktiver, Stapelbasierter Rechner mit
-beliebiger Genauigkeit, der im Textmodus benutzt werden kann.
-
-Installieren Sie bc, wenn Sie seine Zahlenverarbeitungsfähigkeiten brauchen,
-oder wenn Sie einen Textmodus-Rechner haben wollen.
+beliebiger Genauigkeit. Dc ist ein interaktiver, Stapelbasierter Rechner
+mit beliebiger Genauigkeit, der im Textmodus benutzt werden kann.
+Installieren Sie bc, wenn Sie seine Zahlenverarbeitungsfähigkeiten
+brauchen, oder wenn Sie einen Textmodus-Rechner haben wollen.
 
 %description -l fr
 bc est est un outil de calcul en mode texte. Il a des fonctionnalités
@@ -70,10 +68,10 @@ make install DESTDIR=$RPM_BUILD_ROOT
 gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/dc.info,%{_mandir}/man1/*}
 
 %post
-/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+%{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %postun
-/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+%{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %files
 %defattr(644,root,root,755)
