@@ -1,17 +1,18 @@
-Summary:     GNU bc
-Summary(de): GNU bc 
-Summary(fr): GNU bc
-Summary(pl): Kalkulator bc GNU
-Summary(tr): GNU hesap makinasý
-Name:        bc
-Version:     1.05a
-Release:     3
-Copyright:   GPL
-Group:       Applications/Math
-Source:      ftp://prep.ai.mit.edu/pug/gnu/%{name}-%{version}.tar.gz
-Patch0:      bc-info.patch
-Prereq:      /sbin/install-info grep
-Buildroot:   /tmp/%{name}-%{version}-root
+Summary:     	GNU bc
+Summary(de): 	GNU bc 
+Summary(fr): 	GNU bc
+Summary(pl): 	Kalkulator bc GNU
+Summary(tr): 	GNU hesap makinasý
+Name:        	bc
+Version:     	1.05a
+Release:     	3
+Copyright:   	GPL
+Group:       	Applications/Math
+Source:      	ftp://prep.ai.mit.edu/pug/gnu/%{name}-%{version}.tar.gz
+Patch0:      	bc-info.patch
+Prereq:      	/sbin/install-info 
+Prereq:		grep
+Buildroot:   	/tmp/%{name}-%{version}-root
 
 %description
 bc is a text mode calculator of sorts.  It has many extended
@@ -38,7 +39,7 @@ bc metin ekranda çalýþan bir hesap makinasýdýr. Taban dönüþümü gibi ileri
 yetenekleri vardýr.
 
 %prep
-%setup -q -n %{name}-1.05
+%setup  -q -n %{name}-1.05
 %patch0 -p1
 
 %build
@@ -53,7 +54,7 @@ install -d $RPM_BUILD_ROOT/usr/{bin,man/man1}
 
 make prefix=$RPM_BUILD_ROOT/usr install
 
-gzip -nf9 $RPM_BUILD_ROOT/usr/{info/dc.info,man/man1/*}
+gzip -9nf $RPM_BUILD_ROOT/usr/{info/dc.info,man/man1/*}
 
 %post
 /sbin/install-info /usr/info/dc.info.gz /etc/info-dir
@@ -64,9 +65,10 @@ if [ $1 = 0 ]; then
 fi
 
 %files
-%attr(755, root, root) /usr/bin/*
-%attr(644, root,  man) /usr/man/man1/*
-%attr(644, root, root) /usr/info/dc.info.gz
+%defattr(644,root,root,755)
+%attr(755,root,root) /usr/bin/*
+/usr/man/man1/*
+/usr/info/dc.info.gz
 
 %clean 
 rm -rf $RPM_BUILD_ROOT
