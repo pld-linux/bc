@@ -1,6 +1,6 @@
 Summary:	GNU's bc (a numeric processing language) and dc (a calculator)
 Summary(de):	GNUs bc (eine Zahlenverarbeitungssprache) und dc (ein Rechner)
-Summary(es):	GNU bc (lenguaje para calculos matematicos) y dc (calculadora)
+Summary(es):	GNU bc (lenguaje para cálculos matemáticos) y dc (calculadora)
 Summary(fr):	GNU bc
 Summary(pl):	GNU bc (jêzyk obliczeñ numerycznych) i dc (kalkulator)
 Summary(pt_BR):	GNU bc - calculadora de linha de comando
