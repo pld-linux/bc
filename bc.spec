@@ -12,7 +12,6 @@ Group(pl):	Aplikacje/Matematyczne
 Source0:	ftp://ftp.gnu.org/pub/gnu/bc/%{name}-%{version}.tar.gz
 Patch0:		bc-info.patch
 Patch1:		bc-DESTDIR.patch
-Prereq:		/usr/sbin/fix-info-dir
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	readline-devel >= 4.1
 BuildRequires:	flex
@@ -70,10 +69,10 @@ make install DESTDIR=$RPM_BUILD_ROOT
 gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/dc.info,%{_mandir}/man1/*}
 
 %post
-%{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+[ -x /usr/sbin/fix-info-dir ] && /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %postun
-%{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+[ -x /usr/sbin/fix-info-dir ] && /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %files
 %defattr(644,root,root,755)
