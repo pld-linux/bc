@@ -1,39 +1,46 @@
-Summary:     	GNU bc
-Summary(de): 	GNU bc 
+Summary:	GNU's bc (a numeric processing language) and dc (a calculator)
+Summary(de): 	GNUs bc (eine Zahlenverarbeitungssprache) und dc (ein Rechner)
 Summary(fr): 	GNU bc
-Summary(pl): 	Kalkulator bc GNU
+Summary(pl): 	GNU bc (jêzyk obliczeñ numerycznych) i dc (kalkulator)
 Summary(tr): 	GNU hesap makinasý
-Name:        	bc
-Version:     	1.05a
-Release:     	7
-Copyright:   	GPL
-Group:       	Applications/Math
+Name:		bc
+Version:	1.05a
+Release:	8
+Copyright:	GPL
+Group:		Applications/Math
 Group(pl):	Aplikacje/Matematyczne
-Source:      	ftp://prep.ai.mit.edu/pug/gnu/bc/%{name}-%{version}.tar.gz
-Patch0:      	bc-info.patch
-Patch1:      	bc-DESTDIR.patch
-Prereq:      	/sbin/install-info 
-Buildroot:   	/tmp/%{name}-%{version}-root
+Source:		ftp://prep.ai.mit.edu/pug/gnu/bc/%{name}-%{version}.tar.gz
+Patch0:		bc-info.patch
+Patch1:		bc-DESTDIR.patch
+Prereq:		/usr/sbin/fix-info-dir
+Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
-bc is a text mode calculator of sorts.  It has many extended
-features such as base translation.  It can also accept input
-from stdin and return output. dc is the RPN version.
+The bc package includes bc and dc. Bc is an arbitrary precision numeric
+processing arithmetic language. Dc is an interactive arbitrary precision
+stack based calculator, which can be used as a text mode calculator.
+
+Install the bc package if you need its number handling capabilities or if
+you would like to use its text mode calculator.
 
 %description -l de
-bc ist eine Art Textmodus-Rechner, der viele erweiterte Funktionen
-wie Basisübersetzung enthält. Er kann auch Eingaben von
-stdin annehmen und die Ergebnisse ausgeben. dc ist die RPN-Version.
+Das bc-Paket enthält bc und dc. Bc ist eine Zahlenverarbeitungssprache mit
+beliebiger Genauigkeit. Dc ist ein interaktiver, Stapelbasierter Rechner mit
+beliebiger Genauigkeit, der im Textmodus benutzt werden kann.
+
+Installieren Sie bc, wenn Sie seine Zahlenverarbeitungsfähigkeiten brauchen,
+oder wenn Sie einen Textmodus-Rechner haben wollen.
 
 %description -l fr
 bc est est un outil de calcul en mode texte. Il a des fonctionnalités
-étendues comme la conversion de base. il peut aussi accepter l'entrée
-sur stdin et retourner le résultat. dc est la version RPN.
+étendues comme la conversion de base. il peut aussi accepter l'entrée sur
+stdin et retourner le résultat. dc est la version RPN.
 
 %description -l pl
-Bc to kalkulator pracuj±cy w trybie tekstowym, który posiada wiele 
-rozbudowanych funkcji. W czasie pracy mo¿e pobieraæ dane ze standardowego
-wej¶cia (stdin) i wysy³aæ je na standardowe wyj¶cie (stdout).
+Pakiet bc zawiera w sobie programy bc i dc. Bc jest oferuje jêzyk obliczeñ
+numerycznych w którym mo¿na okre¶liæ precyzjê obliczeñ. Dc jest natomiat
+interakcyjnym bazuj±cym na notacji RPN kalkulatorem w którym tak¿e mozan z
+góry okre¶liæ precyzjê obliczeñ.
 
 %description -l tr
 bc metin ekranda çalýþan bir hesap makinasýdýr. Taban dönüþümü gibi ileri
@@ -47,8 +54,8 @@ yetenekleri vardýr.
 %build
 aclocal
 LDFLAGS="-s"; export LDFLAGS
-%configure 
-
+%configure \
+	--with-readline
 make
 
 %install
@@ -61,20 +68,16 @@ make install DESTDIR=$RPM_BUILD_ROOT
 gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/dc.info,%{_mandir}/man1/*}
 
 %post
-/sbin/install-info %{_infodir}/dc.info.gz /etc/info-dir
+/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%preun
-if [ "$1" = "0" ]; then
-	/sbin/install-info --delete %{_infodir}/dc.info.gz /etc/info-dir
-fi
+%postun
+/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %files
 %defattr(644,root,root,755)
-
 %attr(755,root,root) %{_bindir}/*
-
 %{_mandir}/man1/*
-%{_infodir}/dc.info.gz
+%{_infodir}/dc.info*
 
 %clean 
 rm -rf $RPM_BUILD_ROOT
