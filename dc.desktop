@@ -2,7 +2,7 @@
 Name=Dc
 Comment=RPN calculator based on bc language
 Comment[pl]=Kalkulator w odwrotnej notacji polskiej oparty na języku bc
-Icon=
+Icon=xcalc
 Exec=dc
 Terminal=true
 Type=Application
