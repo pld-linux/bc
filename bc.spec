@@ -15,7 +15,7 @@ Patch1:		bc-DESTDIR.patch
 Prereq:		/usr/sbin/fix-info-dir
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	readline-devel >= 4.1
-Buildroot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The bc package includes bc and dc. Bc is an arbitrary precision numeric
