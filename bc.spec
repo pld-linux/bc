@@ -9,13 +9,13 @@ Release:     	7
 Copyright:   	GPL
 Group:       	Applications/Math
 Group(pl):	Aplikacje/Matematyczne
-Source:      	ftp://prep.ai.mit.edu/pug/gnu/%{name}-%{version}.tar.gz
+Source:      	ftp://prep.ai.mit.edu/pug/gnu/bc/%{name}-%{version}.tar.gz
 Patch0:      	bc-info.patch
 Patch1:      	bc-DESTDIR.patch
 Prereq:      	/sbin/install-info 
 Buildroot:   	/tmp/%{name}-%{version}-root
 
-%description 
+%description
 bc is a text mode calculator of sorts.  It has many extended
 features such as base translation.  It can also accept input
 from stdin and return output. dc is the RPN version.
@@ -56,9 +56,7 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
-make \
-    DESTDIR=$RPM_BUILD_ROOT \
-    install
+make install DESTDIR=$RPM_BUILD_ROOT
 
 gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/dc.info,%{_mandir}/man1/*}
 
