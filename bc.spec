@@ -5,7 +5,7 @@ Summary(pl):	GNU bc (jêzyk obliczeñ numerycznych) i dc (kalkulator)
 Summary(tr):	GNU hesap makinasý
 Name:		bc
 Version:	1.06
-Release:	5
+Release:	6
 License:	GPL
 Group:		Applications/Math
 Group(de):	Applikationen/Mathematik
@@ -13,6 +13,8 @@ Group(pl):	Aplikacje/Matematyczne
 Source0:	ftp://ftp.gnu.org/pub/gnu/bc/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-readline.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	ncurses-devel >= 5.2
 BuildRequires:	readline-devel >= 4.2
 BuildRequires:	flex
@@ -56,6 +58,7 @@ ileri yetenekleri vardýr.
 
 %build
 aclocal
+autoconf
 %configure \
 	--with-readline
 %{__make}
