@@ -5,10 +5,11 @@ Summary(pl): Kalkulator bc GNU
 Summary(tr): GNU hesap makinasý
 Name:        bc
 Version:     1.05a
-Release:     1
+Release:     3
 Copyright:   GPL
 Group:       Applications/Math
 Source:      ftp://prep.ai.mit.edu/pug/gnu/%{name}-%{version}.tar.gz
+Patch0:      bc-info.patch
 Prereq:      /sbin/install-info grep
 Buildroot:   /tmp/%{name}-%{version}-root
 
@@ -38,9 +39,12 @@ yetenekleri vardýr.
 
 %prep
 %setup -q -n %{name}-1.05
+%patch0 -p1
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" LDFLAGS=-s ./configure --prefix=/usr
+CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
+./configure \
+	--prefix=/usr
 make
 
 %install
@@ -49,31 +53,30 @@ install -d $RPM_BUILD_ROOT/usr/{bin,man/man1}
 
 make prefix=$RPM_BUILD_ROOT/usr install
 
-strip $RPM_BUILD_ROOT/usr/bin/*
-
-gzip -nf9 $RPM_BUILD_ROOT/usr/info/dc.info
+gzip -nf9 $RPM_BUILD_ROOT/usr/{info/dc.info,man/man1/*}
 
 %post
-if grep 'dc: (bc)' /usr/info/dir > /dev/null; then
-    grep -v 'The GNU RPN calculator' < /usr/info/dir > /usr/info/dir.$$
-    mv -f /usr/info/dir.$$ /usr/info/dir
-fi
-/sbin/install-info /usr/info/dc.info.gz /usr/info/dir --entry="* dc: (dc).                      The GNU RPN calculator."
+/sbin/install-info /usr/info/dc.info.gz /etc/info-dir
 
 %preun
 if [ $1 = 0 ]; then
-  /sbin/install-info --delete /usr/info/dc.info.gz /usr/info/dir --entry="* dc: (dc).                      The GNU RPN calculator."
+	/sbin/install-info --delete /usr/info/dc.info.gz /etc/info-dir
 fi
 
 %files
 %attr(755, root, root) /usr/bin/*
 %attr(644, root,  man) /usr/man/man1/*
-%attr(644, root, root)/usr/info/dc.info.gz
+%attr(644, root, root) /usr/info/dc.info.gz
 
 %clean 
 rm -rf $RPM_BUILD_ROOT
 
 %changelog
+* Tue Dec 29 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.05a-3]
+- standarized {un}registering info pages (added bc-info.patch),
+- added gzipping man pages.
+
 * Sun Sep 27 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.05a-2]
 - changed Buildroot to /tmp/%%{name}-%%{version}-root,
