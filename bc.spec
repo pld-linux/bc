@@ -122,7 +122,7 @@ bzip2 -dc %{SOURCE1} | tar -xf - -C $RPM_BUILD_ROOT%{_mandir}
 %lang(ko) %{_mandir}/ko/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
 
-%{_infodir}/dc.info*
+%{_infodir}/*.info*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
