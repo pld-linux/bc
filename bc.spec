@@ -85,7 +85,7 @@ ileri yetenekleri vardýr.
 
 %build
 aclocal
-autoconf
+%{__autoconf}
 %configure \
 	--with-readline
 %{__make}
