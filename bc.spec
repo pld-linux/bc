@@ -13,6 +13,8 @@ Source:		ftp://prep.ai.mit.edu/pug/gnu/bc/%{name}-%{version}.tar.gz
 Patch0:		bc-info.patch
 Patch1:		bc-DESTDIR.patch
 Prereq:		/usr/sbin/fix-info-dir
+BuildRequires:	ncurses-devel
+BuildRequires:	readline-devel
 Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
