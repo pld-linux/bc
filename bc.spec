@@ -15,7 +15,7 @@ Patch1:      	bc-DESTDIR.patch
 Prereq:      	/sbin/install-info 
 Buildroot:   	/tmp/%{name}-%{version}-root
 
-%description
+%description 
 bc is a text mode calculator of sorts.  It has many extended
 features such as base translation.  It can also accept input
 from stdin and return output. dc is the RPN version.
