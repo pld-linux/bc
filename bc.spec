@@ -15,6 +15,8 @@ Patch1:		bc-DESTDIR.patch
 Prereq:		/usr/sbin/fix-info-dir
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	readline-devel >= 4.1
+BuildRequires:	flex
+BuildRequires:	bison
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -38,8 +40,8 @@ stdin et retourner le résultat. dc est la version RPN.
 
 %description -l pl
 Pakiet bc zawiera w sobie programy bc i dc. Bc jest oferuje jêzyk obliczeñ
-numerycznych w którym mo¿na okre¶liæ precyzjê obliczeñ. Dc jest natomiat
-interakcyjnym bazuj±cym na notacji RPN kalkulatorem w którym tak¿e mozan z
+numerycznych w którym mo¿na okre¶liæ precyzjê obliczeñ. Dc jest natomiast
+interakcyjnym bazuj±cym na notacji RPN kalkulatorem w którym tak¿e mo¿na z
 góry okre¶liæ precyzjê obliczeñ.
 
 %description -l tr
