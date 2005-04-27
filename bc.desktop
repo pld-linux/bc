@@ -2,7 +2,7 @@
 Name=Bc
 Comment=Intepreter of bc --- infinite precision calculation language
 Comment[pl]=Interpreter bc --- języka obliczeń o nieskończonej precyzji
-Icon=xcalc
+Icon=bc
 Exec=bc
 Terminal=true
 Type=Application
