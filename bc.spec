@@ -18,6 +18,7 @@ Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-ma
 # Source1-md5:	ae2cf58a4382d6a0bfeaab3a6a11bd30
 Source2:	bc.desktop
 Source3:	dc.desktop
+Source4:	bc.png
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-readline.patch
 Patch2:		%{name}-flex.patch
@@ -103,9 +104,11 @@ rm -rf $RPM_BUILD_ROOT
 bzip2 -dc %{SOURCE1} | tar -xf - -C $RPM_BUILD_ROOT%{_mandir}
 
 install -d $RPM_BUILD_ROOT%{_desktopdir}
-
 install %{SOURCE2} %{SOURCE3} \
 	$RPM_BUILD_ROOT%{_desktopdir}
+
+install -d $RPM_BUILD_ROOT%{_pixmapsdir}
+install %{SOURCE4} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -121,6 +124,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog FAQ NEWS README
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/*
+%{_pixmapsdir}/*
 %{_mandir}/man1/*
 %lang(es) %{_mandir}/es/man1/*
 %lang(fi) %{_mandir}/fi/man1/*
