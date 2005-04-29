@@ -8,7 +8,7 @@ diff -Nur bc-1.06.orig/doc/dc.texi bc-1.06/doc/dc.texi
 +@dircategory Miscellaneous:
  @direntry
 -* dc: (dc).                   Arbritrary precision RPN ``Desktop Calculator''.
-+* dc: (dc).				Arbritrary precision RPN ``Desktop Calculator''.
++* dc: (dc).				Arbritrary precision RPN ``Desktop Calculator''
  @end direntry
  This file documents @sc{dc}, an arbitrary precision calculator.
  
