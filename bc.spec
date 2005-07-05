@@ -22,6 +22,7 @@ Source4:	bc.png
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-readline.patch
 Patch2:		%{name}-flex.patch
+Patch3:		%{name}-save_adr.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bison
@@ -86,6 +87,7 @@ ileri yetenekleri vardýr.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p0
+%patch3 -p1
 
 %build
 %{__aclocal}
