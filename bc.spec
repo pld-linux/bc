@@ -9,7 +9,7 @@ Summary(tr):	GNU hesap makinasЩ
 Summary(uk):	GNU bc (мова обробки чисел) та dc (калькулятор)
 Name:		bc
 Version:	1.06
-Release:	17
+Release:	19
 License:	GPL
 Group:		Applications/Math
 Source0:	ftp://ftp.gnu.org/pub/gnu/bc/%{name}-%{version}.tar.gz
@@ -22,6 +22,7 @@ Source4:	bc.png
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-readline.patch
 Patch2:		%{name}-flex.patch
+Patch3:		%{name}-save_adr.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bison
@@ -86,6 +87,7 @@ ileri yetenekleri vardЩr.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p0
+%patch3 -p1
 
 %build
 %{__aclocal}
