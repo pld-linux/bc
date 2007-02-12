@@ -1,12 +1,12 @@
 Summary:	GNU's bc (a numeric processing language) and dc (a calculator)
-Summary(de.UTF-8):   GNUs bc (eine Zahlenverarbeitungssprache) und dc (ein Rechner)
-Summary(es.UTF-8):   GNU bc (lenguaje para cálculos matemáticos) y dc (calculadora)
-Summary(fr.UTF-8):   GNU bc
-Summary(pl.UTF-8):   GNU bc (język obliczeń numerycznych) i dc (kalkulator)
-Summary(pt_BR.UTF-8):   GNU bc - calculadora de linha de comando
-Summary(ru.UTF-8):   GNU bc (язык обработки чисел) и dc (калькулятор)
-Summary(tr.UTF-8):   GNU hesap makinası
-Summary(uk.UTF-8):   GNU bc (мова обробки чисел) та dc (калькулятор)
+Summary(de.UTF-8):	GNUs bc (eine Zahlenverarbeitungssprache) und dc (ein Rechner)
+Summary(es.UTF-8):	GNU bc (lenguaje para cálculos matemáticos) y dc (calculadora)
+Summary(fr.UTF-8):	GNU bc
+Summary(pl.UTF-8):	GNU bc (język obliczeń numerycznych) i dc (kalkulator)
+Summary(pt_BR.UTF-8):	GNU bc - calculadora de linha de comando
+Summary(ru.UTF-8):	GNU bc (язык обработки чисел) и dc (калькулятор)
+Summary(tr.UTF-8):	GNU hesap makinası
+Summary(uk.UTF-8):	GNU bc (мова обробки чисел) та dc (калькулятор)
 Name:		bc
 Version:	1.06
 Release:	20
