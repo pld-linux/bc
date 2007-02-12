@@ -1,12 +1,12 @@
 Summary:	GNU's bc (a numeric processing language) and dc (a calculator)
-Summary(de):	GNUs bc (eine Zahlenverarbeitungssprache) und dc (ein Rechner)
-Summary(es):	GNU bc (lenguaje para cАlculos matemАticos) y dc (calculadora)
-Summary(fr):	GNU bc
-Summary(pl):	GNU bc (jЙzyk obliczeЯ numerycznych) i dc (kalkulator)
-Summary(pt_BR):	GNU bc - calculadora de linha de comando
-Summary(ru):	GNU bc (язык обработки чисел) и dc (калькулятор)
-Summary(tr):	GNU hesap makinasЩ
-Summary(uk):	GNU bc (мова обробки чисел) та dc (калькулятор)
+Summary(de.UTF-8):   GNUs bc (eine Zahlenverarbeitungssprache) und dc (ein Rechner)
+Summary(es.UTF-8):   GNU bc (lenguaje para cц║lculos matemц║ticos) y dc (calculadora)
+Summary(fr.UTF-8):   GNU bc
+Summary(pl.UTF-8):   GNU bc (jд≥zyk obliczeе└ numerycznych) i dc (kalkulator)
+Summary(pt_BR.UTF-8):   GNU bc - calculadora de linha de comando
+Summary(ru.UTF-8):   GNU bc (я▐п╥я▀п╨ п╬п╠я─п╟п╠п╬я┌п╨п╦ я┤п╦я│п╣п╩) п╦ dc (п╨п╟п╩я▄п╨я┐п╩я▐я┌п╬я─)
+Summary(tr.UTF-8):   GNU hesap makinasд╠
+Summary(uk.UTF-8):   GNU bc (п╪п╬п╡п╟ п╬п╠я─п╬п╠п╨п╦ я┤п╦я│п╣п╩) я┌п╟ dc (п╨п╟п╩я▄п╨я┐п╩я▐я┌п╬я─)
 Name:		bc
 Version:	1.06
 Release:	20
@@ -39,48 +39,48 @@ precision stack based calculator, which can be used as a text mode
 calculator. Install the bc package if you need its number handling
 capabilities or if you would like to use its text mode calculator.
 
-%description -l de
-Das bc-Paket enthДlt bc und dc. Bc ist eine Zahlenverarbeitungssprache
+%description -l de.UTF-8
+Das bc-Paket enthц╓lt bc und dc. Bc ist eine Zahlenverarbeitungssprache
 mit beliebiger Genauigkeit. Dc ist ein interaktiver, Stapelbasierter
 Rechner mit beliebiger Genauigkeit, der im Textmodus benutzt werden
 kann. Installieren Sie bc, wenn Sie seine
-ZahlenverarbeitungsfДhigkeiten brauchen, oder wenn Sie einen
+Zahlenverarbeitungsfц╓higkeiten brauchen, oder wenn Sie einen
 Textmodus-Rechner haben wollen.
 
-%description -l pt_BR
-bc И uma calculadora modo texto. Ela possui vАrias caracterМsticas
-estendidas como translaГЦo de base.
+%description -l pt_BR.UTF-8
+bc ц╘ uma calculadora modo texto. Ela possui vц║rias caracterц╜sticas
+estendidas como translaц╖цёo de base.
 
-%description -l fr
-bc est est un outil de calcul en mode texte. Il a des fonctionnalitИs
-Иtendues comme la conversion de base. il peut aussi accepter l'entrИe
-sur stdin et retourner le rИsultat. dc est la version RPN.
+%description -l fr.UTF-8
+bc est est un outil de calcul en mode texte. Il a des fonctionnalitц╘s
+ц╘tendues comme la conversion de base. il peut aussi accepter l'entrц╘e
+sur stdin et retourner le rц╘sultat. dc est la version RPN.
 
-%description -l pl
-Pakiet bc zawiera w sobie programy bc i dc. Bc jest oferuje jЙzyk
-obliczeЯ numerycznych w ktСrym mo©na okre╤liФ precyzjЙ obliczeЯ. Dc
-jest natomiast interakcyjnym bazuj╠cym na notacji RPN kalkulatorem w
-ktСrym tak©e mo©na z gСry okre╤liФ precyzjЙ obliczeЯ.
+%description -l pl.UTF-8
+Pakiet bc zawiera w sobie programy bc i dc. Bc jest oferuje jд≥zyk
+obliczeе└ numerycznych w ktцЁrym moе╪na okreе⌡liд┤ precyzjд≥ obliczeе└. Dc
+jest natomiast interakcyjnym bazujд┘cym na notacji RPN kalkulatorem w
+ktцЁrym takе╪e moе╪na z gцЁry okreе⌡liд┤ precyzjд≥ obliczeе└.
 
-%description -l pt_BR
-bc И uma calculadora modo texto. Ela possui vАrias caracterМsticas
-estendidas como translaГЦo de base.
+%description -l pt_BR.UTF-8
+bc ц╘ uma calculadora modo texto. Ela possui vц║rias caracterц╜sticas
+estendidas como translaц╖цёo de base.
 
-%description -l ru
-Пакет bc включает bc и dc. Bc - это арифметический язык для обработки
-чисел произвольной точности. Dc - это интерактивный стековый
-калькулятор произвольной точности, который можно использовать как
-калькулятор в текстовом режиме.
+%description -l ru.UTF-8
+п÷п╟п╨п╣я┌ bc п╡п╨п╩я▌я┤п╟п╣я┌ bc п╦ dc. Bc - я█я┌п╬ п╟я─п╦я└п╪п╣я┌п╦я┤п╣я│п╨п╦п╧ я▐п╥я▀п╨ п╢п╩я▐ п╬п╠я─п╟п╠п╬я┌п╨п╦
+я┤п╦я│п╣п╩ п©я─п╬п╦п╥п╡п╬п╩я▄п╫п╬п╧ я┌п╬я┤п╫п╬я│я┌п╦. Dc - я█я┌п╬ п╦п╫я┌п╣я─п╟п╨я┌п╦п╡п╫я▀п╧ я│я┌п╣п╨п╬п╡я▀п╧
+п╨п╟п╩я▄п╨я┐п╩я▐я┌п╬я─ п©я─п╬п╦п╥п╡п╬п╩я▄п╫п╬п╧ я┌п╬я┤п╫п╬я│я┌п╦, п╨п╬я┌п╬я─я▀п╧ п╪п╬п╤п╫п╬ п╦я│п©п╬п╩я▄п╥п╬п╡п╟я┌я▄ п╨п╟п╨
+п╨п╟п╩я▄п╨я┐п╩я▐я┌п╬я─ п╡ я┌п╣п╨я│я┌п╬п╡п╬п╪ я─п╣п╤п╦п╪п╣.
 
-%description -l tr
-bc metin ekranda ГalЩЧan bir hesap makinasЩdЩr. Taban dЖnЭЧЭmЭ gibi
-ileri yetenekleri vardЩr.
+%description -l tr.UTF-8
+bc metin ekranda ц╖alд╠е÷an bir hesap makinasд╠dд╠r. Taban dц╤nц╪е÷ц╪mц╪ gibi
+ileri yetenekleri vardд╠r.
 
-%description -l uk
-Пакет bc м╕стить bc та dc. Bc - це арифметична мова для обробки чисел
-дов╕льно╖ точност╕. Dc - це ╕нтерактивний стековий калькулятор
-дов╕льно╖ точност╕, який можна використовувати як калькулятор у
-текстовому режим╕.
+%description -l uk.UTF-8
+п÷п╟п╨п╣я┌ bc п╪я√я│я┌п╦я┌я▄ bc я┌п╟ dc. Bc - я├п╣ п╟я─п╦я└п╪п╣я┌п╦я┤п╫п╟ п╪п╬п╡п╟ п╢п╩я▐ п╬п╠я─п╬п╠п╨п╦ я┤п╦я│п╣п╩
+п╢п╬п╡я√п╩я▄п╫п╬я≈ я┌п╬я┤п╫п╬я│я┌я√. Dc - я├п╣ я√п╫я┌п╣я─п╟п╨я┌п╦п╡п╫п╦п╧ я│я┌п╣п╨п╬п╡п╦п╧ п╨п╟п╩я▄п╨я┐п╩я▐я┌п╬я─
+п╢п╬п╡я√п╩я▄п╫п╬я≈ я┌п╬я┤п╫п╬я│я┌я√, я▐п╨п╦п╧ п╪п╬п╤п╫п╟ п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐п╡п╟я┌п╦ я▐п╨ п╨п╟п╩я▄п╨я┐п╩я▐я┌п╬я─ я┐
+я┌п╣п╨я│я┌п╬п╡п╬п╪я┐ я─п╣п╤п╦п╪я√.
 
 %prep
 %setup -q
