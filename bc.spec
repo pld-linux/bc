@@ -9,7 +9,7 @@ Summary(tr.UTF-8):	GNU hesap makinası
 Summary(uk.UTF-8):	GNU bc (мова обробки чисел) та dc (калькулятор)
 Name:		bc
 Version:	1.06
-Release:	20
+Release:	21
 License:	GPL
 Group:		Applications/Math
 Source0:	ftp://ftp.gnu.org/pub/gnu/bc/%{name}-%{version}.tar.gz
