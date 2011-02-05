@@ -62,10 +62,6 @@ obliczeń numerycznych w którym można określić precyzję obliczeń. Dc
 jest natomiast interakcyjnym bazującym na notacji RPN kalkulatorem w
 którym także można z góry określić precyzję obliczeń.
 
-%description -l pt_BR.UTF-8
-bc é uma calculadora modo texto. Ela possui várias características
-estendidas como translação de base.
-
 %description -l ru.UTF-8
 Пакет bc включает bc и dc. Bc - это арифметический язык для обработки
 чисел произвольной точности. Dc - это интерактивный стековый
