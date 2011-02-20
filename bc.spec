@@ -10,9 +10,9 @@ Summary(uk.UTF-8):	GNU bc (мова обробки чисел) та dc (каль
 Name:		bc
 Version:	1.06
 Release:	22
-License:	GPL
+License:	GPL v2+
 Group:		Applications/Math
-Source0:	ftp://ftp.gnu.org/pub/gnu/bc/%{name}-%{version}.tar.gz
+Source0:	http://ftp.gnu.org/gnu/bc/%{name}-%{version}.tar.gz
 # Source0-md5:	d44b5dddebd8a7a7309aea6c36fda117
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	ae2cf58a4382d6a0bfeaab3a6a11bd30
@@ -23,6 +23,7 @@ Patch0:		%{name}-info.patch
 Patch1:		%{name}-readline.patch
 Patch2:		%{name}-flex.patch
 Patch3:		%{name}-save_adr.patch
+URL:		http://www.gnu.org/software/bc/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bison
@@ -111,24 +112,27 @@ install %{SOURCE4} $RPM_BUILD_ROOT%{_pixmapsdir}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p	/sbin/postshell
+%post	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-p	/sbin/postshell
+%postun	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog FAQ NEWS README
-%attr(755,root,root) %{_bindir}/*
-%{_desktopdir}/*.desktop
-%{_pixmapsdir}/*
-%{_mandir}/man1/*
+%attr(755,root,root) %{_bindir}/bc
+%attr(755,root,root) %{_bindir}/dc
+%{_desktopdir}/bc.desktop
+%{_desktopdir}/dc.desktop
+%{_pixmapsdir}/bc.png
+%{_mandir}/man1/bc.1*
+%{_mandir}/man1/dc.1*
 %lang(es) %{_mandir}/es/man1/*
 %lang(fi) %{_mandir}/fi/man1/*
 %lang(hu) %{_mandir}/hu/man1/*
 %lang(ja) %{_mandir}/ja/man1/*
 %lang(ko) %{_mandir}/ko/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
-
-%{_infodir}/*.info*
+%{_infodir}/bc.info*
+%{_infodir}/dc.info*
