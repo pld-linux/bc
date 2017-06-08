@@ -8,23 +8,20 @@ Summary(ru.UTF-8):	GNU bc (язык обработки чисел) и dc (кал
 Summary(tr.UTF-8):	GNU hesap makinası
 Summary(uk.UTF-8):	GNU bc (мова обробки чисел) та dc (калькулятор)
 Name:		bc
-Version:	1.06
-Release:	24
+Version:	1.07.1
+Release:	1
 License:	GPL v2+
 Group:		Applications/Math
 Source0:	http://ftp.gnu.org/gnu/bc/%{name}-%{version}.tar.gz
-# Source0-md5:	d44b5dddebd8a7a7309aea6c36fda117
+# Source0-md5:	cda93857418655ea43590736fc3ca9fc
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	ae2cf58a4382d6a0bfeaab3a6a11bd30
 Source2:	bc.desktop
 Source3:	dc.desktop
 Source4:	bc.png
 Patch0:		%{name}-info.patch
-Patch1:		%{name}-readline.patch
-Patch2:		%{name}-flex.patch
-Patch3:		%{name}-save_adr.patch
 URL:		http://www.gnu.org/software/bc/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	bison
 BuildRequires:	flex
@@ -82,13 +79,11 @@ ileri yetenekleri vardır.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
-%patch2 -p0
-%patch3 -p1
 
 %build
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure \
 	--with-readline

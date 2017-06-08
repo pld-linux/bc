@@ -1,29 +1,26 @@
-diff -Nur bc-1.06.orig/doc/dc.texi bc-1.06/doc/dc.texi
---- bc-1.06.orig/doc/dc.texi	Thu Aug 31 17:57:43 2000
-+++ bc-1.06/doc/dc.texi	Sat Aug  4 14:02:58 2001
-@@ -21,8 +21,9 @@
+--- bc-1.07.1/doc/dc.texi.orig	2017-06-08 19:14:57.069763192 +0200
++++ bc-1.07.1/doc/dc.texi	2017-06-08 19:21:18.129758838 +0200
+@@ -18,8 +18,9 @@
+ @syncodeindex pg fn
  @syncodeindex tp fn
+ 
++@dircategory Miscellaneous:
+ @direntry
+-* dc: (dc).                   Arbitrary precision RPN ``Desktop Calculator''.
++* dc: (dc).				Arbitrary precision RPN ``Desktop Calculator''
+ @end direntry
+ 
+ @copying
+--- bc-1.07.1/doc/bc.texi.orig	2017-04-07 23:55:49.000000000 +0200
++++ bc-1.07.1/doc/bc.texi	2017-06-08 19:22:03.059758327 +0200
+@@ -16,8 +16,9 @@
+ @c end tex
  
  @ifinfo
 +@dircategory Miscellaneous:
  @direntry
--* dc: (dc).                   Arbritrary precision RPN ``Desktop Calculator''.
-+* dc: (dc).				Arbritrary precision RPN ``Desktop Calculator''
+-* bc: (bc).                    An arbitrary precision calculator language.
++* bc: (bc).				An arbitrary precision calculator language
  @end direntry
- This file documents @sc{dc}, an arbitrary precision calculator.
+ @end ifinfo
  
-@@ -88,6 +89,14 @@
- @page
- 
- @node Top, Introduction, (dir), (dir)
-+@top dc
-+
-+DC is a reverse-polish desk calculator which supports unlimited
-+precision arithmetic.  It also allows you to define and call macros.
-+Normally DC reads from the standard input; if any command arguments are
-+given to it, they are filenames, and DC reads and executes the contents
-+of the files instead of reading from standard input.  All normal output
-+is to standard output; all error messages are written to standard error.
- 
- @menu
- * Introduction::                Introduction
