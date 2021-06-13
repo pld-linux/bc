@@ -24,6 +24,7 @@ URL:		http://www.gnu.org/software/bc/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	bison
+BuildRequires:	ed
 BuildRequires:	flex
 BuildRequires:	ncurses-devel >= 5.2
 BuildRequires:	readline-devel >= 5.0
