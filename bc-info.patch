@@ -1,22 +1,23 @@
---- bc-1.07.1/doc/dc.texi.orig	2017-06-08 19:14:57.069763192 +0200
-+++ bc-1.07.1/doc/dc.texi	2017-06-08 19:21:18.129758838 +0200
-@@ -18,8 +18,9 @@
- @syncodeindex pg fn
+--- bc-1.08.1/doc/dc.texi.orig	2025-01-16 21:19:59.744979654 +0100
++++ bc-1.08.1/doc/dc.texi	2025-01-16 21:21:09.377935754 +0100
+@@ -19,8 +19,8 @@
  @syncodeindex tp fn
  
-+@dircategory Miscellaneous:
  @direntry
+-@dircategory Math
 -* dc: (dc).                   Arbitrary precision RPN ``Desktop Calculator''.
++@dircategory Miscellaneous:
 +* dc: (dc).				Arbitrary precision RPN ``Desktop Calculator''
  @end direntry
  
  @copying
---- bc-1.07.1/doc/bc.texi.orig	2017-04-07 23:55:49.000000000 +0200
-+++ bc-1.07.1/doc/bc.texi	2017-06-08 19:22:03.059758327 +0200
-@@ -16,8 +16,9 @@
+--- bc-1.08.1/doc/bc.texi.orig	2025-01-16 21:19:59.744979654 +0100
++++ bc-1.08.1/doc/bc.texi	2025-01-16 21:20:38.561436034 +0100
+@@ -16,9 +16,9 @@
  @c end tex
  
  @ifinfo
+-@dircategory Math
 +@dircategory Miscellaneous:
  @direntry
 -* bc: (bc).                    An arbitrary precision calculator language.
